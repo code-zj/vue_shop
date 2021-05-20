@@ -26,13 +26,13 @@
 </template>
 
 <script>
-export default {
+export default { 
   data() {
     return {
       // 这是登录表单的数据绑定对象
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       // 表单验证规则对象
       loginFormRules: {
@@ -57,6 +57,12 @@ export default {
         // console.log(res);
         if(res.meta.status !== 200) return this.$message.error('登录失败！')
         this.$message.success('登录成功！')
+        // 1.登录成功将token保存到客户端的sessionStorage中
+        // 1.1项目中除了登录之外的其他接口，都需要在登录后访问
+        // 1.2 Token只在当前网站打开期间生效，所有保存在sessionStorage
+        window.sessionStorage.setItem('token', res.data.token)
+        // 登录之后跳转到主页面
+        this.$router.push('/home')
       })
     },
     // 重置表单数据
