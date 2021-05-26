@@ -80,7 +80,7 @@ export default {
     async getMenuList() {
       const {data: res} = await this.$http.get('menus')
       this.menuList = res.data
-      console.log(res.data);
+      // console.log(res.data);
     },
     // 点击折叠展开
     toggleCollapse() {

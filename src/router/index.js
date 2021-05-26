@@ -10,7 +10,7 @@ import Roles from '../views/power/Roles'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: 'login' },
+  { path: '/', redirect: '/login' },
   { path: '/login', component: Login },
   {
     path: '/home',
