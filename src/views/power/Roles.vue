@@ -169,7 +169,7 @@ export default {
         this.getRolesList()
       })
     },
-    // 获取角色id
+    // 展示编辑对话框
     async showEditDialog(id) {
       const {data: res} = await this.$http.get(`roles/${id}`)
       if(res.meta.status !== 200) {
