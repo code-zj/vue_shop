@@ -276,7 +276,7 @@ export default {
         this.onlyTableData = []
         return
       }
-      // console.log(this.selectedKeys);
+      console.log(this.selectedKeys)
 
       const { data: res } = await this.$http.get(
         `categories/${this.selectedId}/attributes`,
@@ -294,7 +294,6 @@ export default {
         // 绑定输入框的数据
         item.inputValue = ''
       })
-      console.log(res.data)
       // 判断需要渲染的是动态参数还是静态属性
       if (this.activeName === 'many') {
         this.manyTableData = res.data
